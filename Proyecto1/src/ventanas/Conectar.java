@@ -5,9 +5,9 @@
 package ventanas;
 
 import Proyecto1.Grafo;
+import Proyecto1.ListaSimple;
 import Proyecto1.MostrarInterfaz;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
+
 
 /**
  *
@@ -17,6 +17,7 @@ public class Conectar extends javax.swing.JFrame {
     
     MostrarInterfaz mostrar = new MostrarInterfaz();
     Grafo funcion = new Grafo();
+    ListaSimple lista = new ListaSimple();
 
     /**
      * Creates new form Conectar
@@ -108,6 +109,7 @@ public class Conectar extends javax.swing.JFrame {
         
         int distancia = Integer.parseInt(texto);
         funcion.ConectarNodos(mostrar.Grafo(), ciudad1, ciudad2, distancia);
+        lista.contains(texto);
     }//GEN-LAST:event_ConectarCiudadesActionPerformed
 
     private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed

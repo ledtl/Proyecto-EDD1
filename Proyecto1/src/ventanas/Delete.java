@@ -5,9 +5,9 @@
 package ventanas;
 
 import Proyecto1.Grafo;
+import Proyecto1.ListaSimple;
 import Proyecto1.MostrarInterfaz;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
+
 
 /**
  *
@@ -17,6 +17,7 @@ public class Delete extends javax.swing.JFrame {
    
     MostrarInterfaz mostrar = new MostrarInterfaz();
     Grafo funcion = new Grafo();
+    ListaSimple lista = new Proyecto1.ListaSimple();
 
     /**
      * Creates new form Delete
@@ -89,6 +90,7 @@ public class Delete extends javax.swing.JFrame {
     private void deletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletActionPerformed
         int ciudad = (int) jSpinner1.getValue();
         funcion.EliminarCiudad(mostrar.Grafo(), ciudad);
+        lista.RemoveElement(ciudad);
     }//GEN-LAST:event_deletActionPerformed
 
     /**

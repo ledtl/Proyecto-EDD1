@@ -9,10 +9,13 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 
 /**
- *
- * @author Windows Pro
+ * Esta es la clase donde se va a realizar la simulación
+ * @author Edgar Torres
+ * @version 25/02/2024
  */
 public class Simulacion {
+    
+    //campos de la clase
     Graph grafoSim = new SingleGraph("Proyecto 1");             // El grafo en el que se va a correr la simulacion
     Nodo inicio;                // El nodo donde se va a arrancar
     Nodo destino;               // El nodo destino a donde se quiere llegar
@@ -24,7 +27,6 @@ public class Simulacion {
     Nodo primerNodoVisitado;    // El inicio de la lista de nodos visitados para cada simulacion
     Nodo ultimoNodoVisitado;    // El ultimo nodo visitado para cada simulacion
     float feromIniciales;
-    Nodo nodoActual;
     
     public Simulacion(){
         this.grafoSim = null;
@@ -37,7 +39,6 @@ public class Simulacion {
         this.primerNodoVisitado = null;
         this.ultimoNodoVisitado = null;
         this.feromIniciales = 0.1F;
-        this.nodoActual = null;
     }
     
     public Simulacion(Graph miGrafo){
@@ -51,94 +52,158 @@ public class Simulacion {
         this.primerNodoVisitado = null;
         this.ultimoNodoVisitado = null;
         this.feromIniciales = 0.1F;
-        this.nodoActual = null;
     }
 
+    /**
+    * @return the grafoSim
+    */
     public Graph getGrafoSim() {
-        return grafoSim;
-        
+        return grafoSim; 
     }
 
+     /**
+     * @param grafoSim the grafoSim to set
+     */
     public void setGrafoSim(Graph grafoSim) {
         this.grafoSim = grafoSim;
     }
 
+    /**
+    * @return the inicio
+    */
     public Nodo getInicio() {
         return inicio;
     }
 
+     /**
+     * @param inicio the inicio to set
+     */
     public void setInicio(Nodo inicio) {
         this.inicio = inicio;
     }
 
+    /**
+    * @return the destino
+    */
     public Nodo getDestino() {
         return destino;
     }
 
+     /**
+     * @param destino the destino to set
+     */
     public void setDestino(Nodo destino) {
         this.destino = destino;
     }
 
+    /**
+    * @return the alfa
+    */
     public float getAlfa() {
         return alfa;
     }
 
+     /**
+     * @param alfa the alfa to set
+     */
     public void setAlfa(float alfa) {
         this.alfa = alfa;
     }
 
+    /**
+    * @return the beta
+    */
     public float getBeta() {
         return beta;
     }
 
+     /**
+     * @param beta the beta to set
+     */
     public void setBeta(float beta) {
         this.beta = beta;
     }
 
+    /**
+    * @return the iteraciones
+    */
     public int getIteraciones() {
         return iteraciones;
     }
 
+     /**
+     * @param iteraciones the iteraciones to set
+     */
     public void setIteraciones(int iteraciones) {
         this.iteraciones = iteraciones;
     }
 
+    /**
+    * @return the disipacion
+    */
     public float getDisipacion() {
         return disipacion;
     }
 
+     /**
+     * @param disipacion the disipacion to set
+     */
     public void setDisipacion(float disipacion) {
         this.disipacion = disipacion;
     }
 
+    /**
+    * @return the ultimaDistancia
+    */
     public float getUltimaDistancia() {
         return ultimaDistancia;
     }
 
+     /**
+     * @param ultimaDistancia the ultimaDistancia to set
+     */
     public void setUltimaDistancia(float ultimaDistancia) {
         this.ultimaDistancia = ultimaDistancia;
     }
 
+    /**
+    * @return the primerNodoVisitado
+    */
     public Nodo getPrimerNodoVisitado() {
         return primerNodoVisitado;
     }
 
+     /**
+     * @param primerNodoVisitado the primerNodoVisitado to set
+     */
     public void setPrimerNodoVisitado(Nodo primerNodoVisitado) {
         this.primerNodoVisitado = primerNodoVisitado;
     }
 
+    /**
+    * @return the ultimoNodoVisitado
+    */
     public Nodo getUltimoNodoVisitado() {
         return ultimoNodoVisitado;
     }
 
+     /**
+     * @param ultimoNodoVisitado the ultimoNodoVisitado to set
+     */
     public void setUltimoNodoVisitado(Nodo ultimoNodoVisitado) {
         this.ultimoNodoVisitado = ultimoNodoVisitado;
     }
     
+    /**
+    * @return the feromIniciales
+    */
     public float getferomIniciales() {
         return feromIniciales;
     }
 
+     /**
+     * @param feromIniciales the feromIniciales to set
+     */
     public void setferomIniciales(float feromIniciales) {
         this.feromIniciales = feromIniciales;
     }
@@ -171,35 +236,41 @@ public class Simulacion {
                 this.primerNodoVisitado.setSiguienteNodo(null);
                 this.ultimoNodoVisitado = null;
                 
-                //Comienzo buscando la adyacencia de los nodos al que estoy actualmente
-                this.nodoActual = this.inicio;
                 
                 
             }
         }
         
         
-    }
-    
-    public void cargaFeromonas(){
-        
-    }
+    }//cierre del método
 
+    /**
+    * @return the exception
+    */
     boolean esvacia() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+    * @return the exception
+    */
     Arista getPrimero() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+    * @return the exception
+    */
     void insertar(Arista aristaFilt) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+    * @return the exception
+    */
     void setPrimero(Arista aristaAux) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
    
-    }
+}//cierre de la clase

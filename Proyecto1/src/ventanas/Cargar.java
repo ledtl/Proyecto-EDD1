@@ -6,6 +6,7 @@ package ventanas;
 
 import Proyecto1.CargarGrafoTxt;
 import Proyecto1.MostrarInterfaz;
+import Proyecto1.Simulacion;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Cargar extends javax.swing.JFrame {
     
     MostrarInterfaz mostrar = new MostrarInterfaz();
     CargarGrafoTxt cargargrafo = new CargarGrafoTxt();
+    Simulacion simulacion = new Simulacion();
 
     /**
      * Creates new form Cargar
@@ -38,6 +40,7 @@ public class Cargar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
+        AñadirTXT = new javax.swing.JButton();
         cargar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,7 +55,7 @@ public class Cargar extends javax.swing.JFrame {
                 VolverActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, 160, 50));
+        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 160, 50));
 
         CargarGrafo.setBackground(new java.awt.Color(51, 255, 204));
         CargarGrafo.setFont(new java.awt.Font("Swis721 Blk BT", 1, 14)); // NOI18N
@@ -62,7 +65,7 @@ public class Cargar extends javax.swing.JFrame {
                 CargarGrafoActionPerformed(evt);
             }
         });
-        getContentPane().add(CargarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 160, 50));
+        getContentPane().add(CargarGrafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 160, 50));
 
         jLabel2.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,7 +76,17 @@ public class Cargar extends javax.swing.JFrame {
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 380, 180));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 380, 180));
+
+        AñadirTXT.setBackground(new java.awt.Color(51, 255, 204));
+        AñadirTXT.setFont(new java.awt.Font("Swis721 Blk BT", 1, 14)); // NOI18N
+        AñadirTXT.setText("Añadir TXT");
+        AñadirTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AñadirTXTActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AñadirTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 160, 50));
 
         cargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
         getContentPane().add(cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 743, -1));
@@ -90,8 +103,14 @@ public class Cargar extends javax.swing.JFrame {
 
     private void CargarGrafoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarGrafoActionPerformed
         String textociudad = jTextArea3.getText();
-        cargargrafo.cargarGrafoTxt(mostrar.Grafo(), textociudad);
+        cargargrafo.leerArchivo(mostrar.Grafo(), textociudad);
+        mostrar.Grafo().display();
+        simulacion.iniciarSimulacion();
     }//GEN-LAST:event_CargarGrafoActionPerformed
+
+    private void AñadirTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirTXTActionPerformed
+        jTextArea3.setText(cargargrafo.abrirArchivo());
+    }//GEN-LAST:event_AñadirTXTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +148,7 @@ public class Cargar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AñadirTXT;
     private javax.swing.JButton CargarGrafo;
     private javax.swing.JButton Volver;
     private javax.swing.JLabel cargar;

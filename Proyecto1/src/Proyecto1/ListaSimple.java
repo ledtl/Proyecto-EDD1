@@ -5,10 +5,13 @@
 package Proyecto1;
 
 /**
- *
+ * Esta clase define la lista simple
  * @author Edgar Torres
+ * @version 25/02/2024
  */
 public class ListaSimple {
+    
+    //campos de la clase
     private Nodo pFirst; 
     private Nodo pLast; 
     private int size; 
@@ -26,11 +29,15 @@ public class ListaSimple {
         this.size = 0;
     }
     
+    // Método que revisa si la lista está vacia o no
+    // @return true o false
     public boolean EsVacia(){ 
         return (getpFirst() == null);               
-    }
+    }//cierre del método
     
-    
+    // Método que revisa si la lista contiene un elemento
+    // @param elemento el elemento que se está revisando
+    // @return true o false    
     public boolean contains(Object elemento) {
         Nodo actual = pFirst;
         while (actual != null) {
@@ -40,9 +47,10 @@ public class ListaSimple {
             actual = actual.getpNext();
         }
         return false;
-    }
+    }//cierre del método
 
-    
+    // Método que inserta el elemento al final de la lista
+    // @param x el objeto que se va insertar al final    
     public void InsertAtTheEnd(Object x){ 
         Nodo nuevo = new Nodo(x);
         if (this.EsVacia()){ 
@@ -53,8 +61,10 @@ public class ListaSimple {
             pLast = nuevo;    
         }
         size++; 
-    }
-    
+    }//cierre del método
+
+    // Método que elimina un elemento de la lista
+    // @param elemento el objeto que se va eliminar
     public void RemoveElement(Object elemento) {
         // Verificar si la lista está vacía
         if (EsVacia()) {
@@ -88,8 +98,10 @@ public class ListaSimple {
         }
         
         // Si no se encontró el elemento, no se hace nada
-    }
+    }//cierre del método
     
+    // Método que imprime la lista de hormigas
+    // @return String
     public String ImprimirListadeHormigas(){ 
         StringBuilder cadena = new StringBuilder();
         int contador = 1;
@@ -109,41 +121,58 @@ public class ListaSimple {
             contador ++;
         }
         return cadena.toString();
-    }
-
+    }//cierre del método
     
-    
+    // Método que vacia la lista    
     public void vaciar(){
         this.pFirst = null;
         this.pLast = null;
         this.size = 0;
-    }
+    }//cierre del método
 
+     /**
+     * @return the pFirst
+     */
     public Nodo getpFirst() {
         return pFirst;
     }
 
+    /**
+     * @param pFirst the pFirst to set
+     */
     public void setpFirst(Nodo pFirst) {
         this.pFirst = pFirst;
     }
 
+    /**
+     * @return the pLast
+     */
     public Nodo getpLast() {
         return pLast;
     }
 
+    /**
+     * @param pLast the pLast to set
+     */
     public void setpLast(Nodo pLast) {
         this.pLast = pLast;
     }
 
+    /**
+     * @return the size
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * @param size the size to set
+     */
     public void setSize(int size) {
         this.size = size;
     }
 
     
-    }
+}//cierre de la clase
     
 

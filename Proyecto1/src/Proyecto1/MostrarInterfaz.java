@@ -9,11 +9,16 @@ import org.graphstream.graph.implementations.SingleGraph;
 import ventanas.Newmenu;
 
 /**
- *
- * @author Windows Pro
+ * Esta es la clase main donde se muestra la interfaz
+ * @author Diego Goncalves
+ * @version 25/02/2024
  */
 public class MostrarInterfaz {
     
+    //campos de la clase
+    
+    // Método que agarra el grafo realizado
+    // @return Graph
     public Graph Grafo(){
         
         System.setProperty("org.graphstream.ui", "swing"); 
@@ -21,12 +26,13 @@ public class MostrarInterfaz {
         Graph grafoproyecto = new SingleGraph("Proyecto 1");
         
         return grafoproyecto;  
-    }
+    }//cierre del método
     
     public static void main(String[] args) {
-        
+       
         Newmenu menu = new Newmenu();
         
         menu.show(true);
     }
+
 }

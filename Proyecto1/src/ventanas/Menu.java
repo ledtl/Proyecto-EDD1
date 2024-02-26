@@ -5,6 +5,8 @@
 package ventanas;
 
 import Proyecto1.MostrarInterfaz;
+import Proyecto1.Simulacion;
+import org.graphstream.graph.Graph;
 
 /**
  *
@@ -13,6 +15,8 @@ import Proyecto1.MostrarInterfaz;
 public class Menu extends javax.swing.JFrame {
     
     MostrarInterfaz mostrar = new MostrarInterfaz();
+    Simulacion simulacion = new Simulacion();
+    public Graph grafo;
 
     /**
      * Creates new form Menu
@@ -126,6 +130,7 @@ public class Menu extends javax.swing.JFrame {
         this.setVisible(false);
         
         mostrar.Grafo().display();
+        simulacion.iniciarSimulacion();
     }//GEN-LAST:event_IniciarActionPerformed
 
     private void Cuidad5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cuidad5ActionPerformed

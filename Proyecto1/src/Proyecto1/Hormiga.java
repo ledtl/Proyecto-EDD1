@@ -5,10 +5,13 @@
 package Proyecto1;
 
 /**
- *
+ * Esta clase define los datos de la hormiga
  * @author Edgar Torres
+ * @version 25/02/2024
  */
 public class Hormiga {
+    
+    //campos de la clase
     private ListaSimple camino;
     private float alpha;
     private float beta;
@@ -28,6 +31,9 @@ public class Hormiga {
         this.grafo = null;
     }
 
+    // Método que revisa si el nodo se ha visitado o no
+    // @param NodoArista el nodo recibido
+    // @return true o false
     public boolean NodoVisitado(NodoArista nodo) { 
         boolean visitado = false;
         Nodo aux = camino.getpFirst();
@@ -39,8 +45,10 @@ public class Hormiga {
             }
         }
         return visitado;
-    } 
- 
+    }//cierre del método
+    
+    // Método que busca el camino más corto
+    // @param grafo el grafo recibido
     public void buscarCamino(Grafo grafo) {
         camino.vaciar();
         NodoArista nodoActual = this.grafo.getPrimero();
@@ -91,8 +99,9 @@ public class Hormiga {
                 break;
             }
         }
-    }
+    }//cierre del método
     
+    // Método que deposita las feromonas
     public void depositarFeromonas() {
         Nodo aux = camino.getpFirst();
         while (aux.getpNext() != null) {
@@ -103,8 +112,11 @@ public class Hormiga {
             arista.setFeromonas(arista.getFeromonas() + cantidadFeromonas);
             aux = aux.getpNext();
         }
-    }
+    }//cierre del método
     
+    // Método que permite filtrar las aristas disponibles
+    // @param aristas las aristas de la simulación
+    // @return Simulacion
     private Simulacion filtrarAristasDisponibles(Simulacion aristas) {
         Simulacion aristasFiltradas = new Simulacion();
         Arista arista = aristas.getPrimero();
@@ -124,8 +136,11 @@ public class Hormiga {
         }
         
         return aristasFiltradas;
-    }
+    }//cierre del método
     
+    // Método que permite marcar el nodo como visitado
+    // @param nodo el nodo que se va a revisar
+    // @return true or false
     public boolean NodoVisitado(Object nodo) {
         Nodo aux = camino.getpFirst();
         while (aux != null) {
@@ -135,40 +150,62 @@ public class Hormiga {
             aux = aux.getpNext();
         }
         return false;
-    }    
+    }//cierre del método
 
-
+    /**
+     * @return the camino
+     */
     public ListaSimple getCamino() {
         return camino;
     }
 
+    /**
+     * @param camino the camino to set
+     */
     public void setCamino(ListaSimple camino) {
         this.camino = camino;
     }
     
-
+    /**
+     * @return the alpha
+     */
     public float getAlpha() {
         return alpha;
     }
 
+    /**
+     * @param alpha the alpha to set
+     */
     public void setAlpha(float alpha) {
         this.alpha = alpha;
     }
 
+    /**
+     * @return the beta
+     */
     public float getBeta() {
         return beta;
     }
 
+    /**
+     * @param beta the beta to set
+     */
     public void setBeta(float beta) {
         this.beta = beta;
     }
 
+    /**
+     * @return the grafo
+     */
     public Grafo getGrafo() {
         return grafo;
     }
 
+    /**
+     * @param grafo the grafo to set
+     */
     public void setGrafo(Grafo grafo) {
         this.grafo = grafo;
     }
     
-}
+}//cierre de la clase

@@ -6,6 +6,7 @@ package ventanas;
 
 import Proyecto1.Grafo;
 import Proyecto1.MostrarInterfaz;
+import Proyecto1.ListaSimple;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Agregar extends javax.swing.JFrame {
     
     MostrarInterfaz mostrar = new MostrarInterfaz();
     Grafo funcion = new Grafo();
+    ListaSimple lista = new ListaSimple();
 
     /**
      * Creates new form agregarcuidad
@@ -87,6 +89,7 @@ public class Agregar extends javax.swing.JFrame {
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         int ciudades = (int) jSpinner1.getValue();
         funcion.AgregarCiudad(mostrar.Grafo(), ciudades);
+        lista.InsertAtTheEnd(ciudades);
     }//GEN-LAST:event_addActionPerformed
 
     /**

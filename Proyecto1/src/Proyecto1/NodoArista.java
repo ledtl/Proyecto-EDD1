@@ -5,10 +5,14 @@
 package Proyecto1;
 
 /**
- *
+ * Esta es la clase donde se conecta el nodo con la arista
  * @author Edgar Torres
+ * @version 25/02/2024
  */
 public class NodoArista {
+    
+    //campos de la clase
+
     private Object dato;
     private Simulacion lista;
     private NodoArista siguiente;
@@ -26,29 +30,46 @@ public class NodoArista {
         this.siguiente = siguiente;
     }
 
+    /**
+     * @return the dato
+     */
     public Object getDato() {
         return dato;
     }
 
+    /**
+     * @param dato the dato to set
+     */
     public void setDato(Object dato) {
         this.dato = dato;
     }
 
+    /**
+     * @return the lista
+     */
     public Simulacion getLista() {
         return lista;
     }
 
+    /**
+     * @param lista the lista to set
+     */
     public void setLista(Simulacion lista) {
         this.lista = lista;
     }
 
+    /**
+     * @return the siguiente
+     */
     public NodoArista getSiguiente() {
         return siguiente;
     }
 
+     /**
+     * @param siguiente the lista to set
+     */
     public void setSiguiente(NodoArista siguiente) {
         this.siguiente = siguiente;
     }
 
-    
-}
+}//cierre de la clase

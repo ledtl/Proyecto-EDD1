@@ -16,14 +16,26 @@ import org.graphstream.graph.Node;
  */
 public class Grafo {
 
+    /**
+     * @param trim, string del nodo
+     */
     public static void nuevoNodo(String trim) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     * @return the exception
+     */
     public static float contarVertices() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     * @param origen objeto de origen
+     * @param destino objeto de destino
+     * @param distancia la distancia de la arista
+     * @param feromonas la cantidad de feromonas
+     */
     public static void NuevaArista(Object origen, Object destino, float distancia, float feromonas) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -68,28 +80,42 @@ public class Grafo {
     
     // Método que agrega los nodos al graph stream
     // @param graph el grafo del sistema, ciudades el número de ciudades que si quiere añadir
-    public void AgregarCiudad(Graph grafoproyecto, int ciudades){
+    public Graph AgregarCiudad(Graph grafoproyecto, int ciudades){
         
         for (char letra = 65; letra < 65+ciudades; letra++){
             String str = String.valueOf(letra);
             grafoproyecto.addNode(str);
         }
         
+        Graph grafo = grafoproyecto;
         JOptionPane.showMessageDialog(null,"Ciudades añadidas con exito.");
+        return grafo;
     }//cierre del método
 
+    /**
+     * @return the exception
+     */
     NodoArista getUltimo() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     * @return the exception
+     */
     NodoArista getPrimero() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     * @return the exception
+     */
     NodoArista obtenerNodo(String siguienteNodo) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    /**
+     * @return the exception
+     */
     Arista obtenerAristaEntreNodos(Object origen, Object destino) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
